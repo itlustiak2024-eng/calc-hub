@@ -3,8 +3,20 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "CalcHub",
-  description: "Калькулятори для бізнесу",
+  title: "CalcHub — Онлайн-калькулятори для бізнесу, ФОП та крипти",
+  description: "Зручні безкоштовні інструменти: розрахунок податків ФОП, калькулятор маржі, конвертер криптовалют та розрахунок комісій Stripe.",
+  keywords: [
+    "калькулятор фоп", 
+    "податки фоп 2026", 
+    "розрахунок податків онлайн", 
+    "калькулятор для бізнесу україна",
+    "калькулятор маржі",
+    "розрахунок маржинальності",
+    "криптоконвертер",
+    "конвертер криптовалют",
+    "калькулятор комісій stripe",
+    "stripe калькулятор"
+  ],
 };
 
 export default function RootLayout({
@@ -15,10 +27,10 @@ export default function RootLayout({
   return (
     <html lang="uk">
       <body className="antialiased">
-        {/* Google Analytics */}
+        {/* Google Analytics скрипти */}
         <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-0K9TG0HR3K"
+              async
+              src="https://www.googletagmanager.com/gtag/js?id=G-0K9TG0HR3K"
         />
         <Script id="google-analytics">
           {`
