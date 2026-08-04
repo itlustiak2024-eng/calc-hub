@@ -27,10 +27,10 @@ export default function RootLayout({
   return (
     <html lang="uk">
       <body className="antialiased">
-        {/* Google Analytics скрипти */}
+        {/* Google Analytics */}
         <Script
-              async
-              src="https://www.googletagmanager.com/gtag/js?id=G-0K9TG0HR3K"
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-0K9TG0HR3K"
         />
         <Script id="google-analytics">
           {`
@@ -40,6 +40,13 @@ export default function RootLayout({
             gtag('config', 'G-0K9TG0HR3K');
           `}
         </Script>
+
+        {/* Google AdSense */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2880272311000987"
+          crossOrigin="anonymous"
+        />
 
         {children}
       </body>
