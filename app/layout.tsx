@@ -17,6 +17,9 @@ export const metadata: Metadata = {
     "калькулятор комісій stripe",
     "stripe калькулятор"
   ],
+  other: {
+    "google-adsense-account": "ca-pub-2880272311000987",
+  },
 };
 
 export default function RootLayout({
@@ -41,7 +44,7 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Google AdSense */}
+        {/* Google AdSense скрипт залишаємо також для показу реклами в майбутньому */}
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2880272311000987"
