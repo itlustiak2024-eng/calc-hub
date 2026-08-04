@@ -44,7 +44,7 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Google AdSense скрипт залишаємо також для показу реклами в майбутньому */}
+        {/* Google AdSense */}
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2880272311000987"
