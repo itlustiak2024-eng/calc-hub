@@ -1392,6 +1392,25 @@ export default function Home() {
               {t.helpDesc}
             </p>
             <div className="flex gap-3">
+              <a href="#contacts" className="text-gray-600 hover:text-black transition-colors">
+  Контакти
+</a>
+<section id="contacts" className="max-w-4xl mx-auto px-6 py-16 border-t border-gray-100 mt-12">
+  <h2 className="text-2xl font-bold mb-4 text-gray-900">Контакти</h2>
+  <p className="mb-6 text-gray-600">Ви можете зв'язатися з нами або відвідати наші офіси у Львові:</p>
+  
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="p-6 border border-gray-200 rounded-2xl bg-gray-50 shadow-sm">
+      <h3 className="font-semibold text-lg text-gray-900 mb-1">Головний офіс</h3>
+      <p className="text-gray-600 text-sm">Svoboda Avenue, Lviv, 79000</p>
+    </div>
+    
+    <div className="p-6 border border-gray-200 rounded-2xl bg-gray-50 shadow-sm">
+      <h3 className="font-semibold text-lg text-gray-900 mb-1">Представництво</h3>
+      <p className="text-gray-600 text-sm">Rynok Square, Lviv, 79000</p>
+    </div>
+  </div>
+</section>
               <a 
                 href="https://t.me/student020239" 
                 target="_blank" 
