@@ -29,13 +29,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="uk">
+      <head>
+        {/* Прямий метатег для AdSense (гарантоване розпізнавання роботами Google) */}
+        <meta name="google-adsense-account" content="ca-pub-9151853318987476" />
+      </head>
       <body className="antialiased">
         {/* Google Analytics */}
         <Script
-          async
+          strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-0K9TG0HR3K"
         />
-        <Script id="google-analytics">
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -44,11 +48,12 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Google AdSense */}
+        {/* Google AdSense Script */}
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9151853318987476"
           crossOrigin="anonymous"
+          strategy="afterInteractive"
         />
 
         {children}
