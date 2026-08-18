@@ -1,10 +1,24 @@
 'use client';
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 export default function Home() {
   const [lang, setLang] = useState<'en' | 'ua'>('en');
+
+  // Зчитуємо збережену мову при завантаженні
+  useEffect(() => {
+    const savedLang = localStorage.getItem('app_lang') as 'en' | 'ua' | null;
+    if (savedLang) {
+      setLang(savedLang);
+    }
+  }, []);
+
+  // Функція зміни мови із збереженням у localStorage
+  const handleLangChange = (newLang: 'en' | 'ua') => {
+    setLang(newLang);
+    localStorage.setItem('app_lang', newLang);
+  };
 
   const content = {
     en: {
@@ -29,10 +43,10 @@ export default function Home() {
 
   return (
     <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-slate-950 text-white px-4">
-      {/* Перемикач мов у правому верхньому кутку */}
+      {/* Перемикач мов */}
       <div className="absolute top-6 right-6 z-20 flex items-center gap-1 bg-slate-900/90 border border-slate-800 p-1 rounded-xl backdrop-blur-md">
         <button
-          onClick={() => setLang('en')}
+          onClick={() => handleLangChange('en')}
           className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-all ${
             lang === 'en'
               ? 'bg-blue-600 text-white shadow-md'
@@ -42,7 +56,7 @@ export default function Home() {
           🇺🇸 EN
         </button>
         <button
-          onClick={() => setLang('ua')}
+          onClick={() => handleLangChange('ua')}
           className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-all ${
             lang === 'ua'
               ? 'bg-blue-600 text-white shadow-md'
